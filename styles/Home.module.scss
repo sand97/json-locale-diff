@@ -1,0 +1,46 @@
+@import "styles/theme";
+
+.root{
+  background-color: $background-dark;
+  min-height: 100vh;
+  button{
+    margin-top: 12px;
+    margin-bottom: 24px;
+  }
+}
+
+.container {
+  padding-top: 24px;
+  max-width: $lg;
+  margin: 0 auto;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  .item {
+    width: calc(50% - 8px);
+
+    textarea{
+      width: 100%;
+      background-color: $paper-dark;
+      border: 1px solid $white;
+      border-radius: 0px;
+      padding: 12px 24px;
+      color: $white;
+      outline: none;
+      opacity: .8;
+    }
+    textarea:focus {
+      border: 1px solid $primary;
+    }
+    textarea:disabled{
+      opacity: .5;
+    }
+  }
+  @media screen and (max-width: $md) {
+    margin: 16px;
+    .item{
+      width: 100%;
+    }
+  }
+
+}

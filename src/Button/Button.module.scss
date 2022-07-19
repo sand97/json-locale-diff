@@ -1,0 +1,59 @@
+@import "styles/theme";
+
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  transition-duration: 350ms;
+  align-items: center;
+  padding: 10px 24px;
+  border-radius: 0px;
+  border-width: 2px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  border-style: solid;
+  line-height: 26px;
+  background-color: transparent;
+  span:nth-child(1){
+    margin-right: 10px;
+  }
+}
+
+.primary{
+  border-color: $primary;
+}
+
+.secondary{
+  border-color: $white;
+}
+
+.outlined_primary {
+  color: $primary;
+}
+
+.outlined_secondary {
+  border-color: $white;
+  color: $white;
+}
+
+.contained_primary {
+  background-color: $primary;
+  color: $white;
+}
+
+.contained_secondary {
+  background-color: $white;
+  color: $primary;
+}
+
+.mix_primary {
+  border-color: $white;
+  color: $white;
+  @media screen and (max-width: $md) {
+    border-color: $primary;
+    background-color: $primary;
+    color: $white;
+  }
+}

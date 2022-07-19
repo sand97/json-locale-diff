@@ -1,6 +1,12 @@
 {
   "name": "json-locale-diff",
   "version": "0.1.0",
+  "description": "Show difference between JSON or Javascript Object",
+  "author": {
+    "url": "https://www.linkedin.com/in/bruce-guenkam",
+    "name": "Bruce Guenkam",
+    "email": "briceguekam@gmail.com"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +15,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^1.2.1",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -19,6 +26,7 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
+    "sass": "^1.53.0",
     "typescript": "4.7.4"
   }
 }
