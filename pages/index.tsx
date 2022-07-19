@@ -126,8 +126,16 @@ const Home: NextPage = () => {
                 </section>
             </main>
 
-            <footer>
-
+            <footer className={styles.footer}>
+                <section className={styles.container}>
+                    <p>Created by <a target={'_blank'} href="https://www.linkedin.com/in/bruce-guenkam">Bruce Guenkam</a>.</p>
+                    <div style={{ flexGrow: 1 }}/>
+                    <a href="https://www.buymeacoffee.com/bruceguenkam" target={'_blank'}>
+                        <img src="/yellow-button.png" alt=""/>
+                    </a>
+                    <div style={{ flexGrow: 1 }}/>
+                    <a href="https://github.com/sand97/json-locale-diff" target={'_blank'}>Source</a>
+                </section>
             </footer>
         </div>
     )
