@@ -1,11 +1,29 @@
 @import "styles/theme";
 
-.root{
+.root {
   background-color: $background-dark;
   min-height: 100vh;
-  button{
+
+  button {
     margin-top: 12px;
     margin-bottom: 24px;
+  }
+
+  > section {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cover {
+    position: fixed;
+    background-image: url("/pattern.svg");
+    z-index: 1;
+    left: 0;
+    top: 0;
+    opacity: .1;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
   }
 }
 
@@ -16,29 +34,33 @@
   justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
+
   .item {
     width: calc(50% - 8px);
 
-    textarea{
+    textarea {
       width: 100%;
-      background-color: $paper-dark;
-      border: 1px solid $white;
-      border-radius: 0px;
-      padding: 12px 24px;
-      color: $white;
+      background-color: #0f0f0f;
+      border: 1px solid #cccccc;
+      border-radius: 0;
+      padding: 24px 16px;
+      color: #dcdcdc;
       outline: none;
-      opacity: .8;
+      //opacity: .8;
     }
+
     textarea:focus {
       border: 1px solid $primary;
     }
-    textarea:disabled{
-      opacity: .5;
+
+    textarea:disabled {
+      //opacity: .5;
     }
   }
+
   @media screen and (max-width: $md) {
     margin: 16px;
-    .item{
+    .item {
       width: 100%;
     }
   }

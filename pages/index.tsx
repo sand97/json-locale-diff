@@ -65,9 +65,17 @@ const Home: NextPage = () => {
                 <title>JSON Locale Diff</title>
                 <meta name="description" content="Show difference between JSON or Javascript Object"/>
                 <link rel="icon" href="/favicon.ico"/>
+
+                <meta property="og:image" content="https://json-locale-diff.netlify.app/cover.jpeg"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+                <meta property="og:title" content='JSON Locale Diff'/>
+                <meta name="twitter:card" content="summary_large_image"/>
+                <meta property="og:description" content="Show difference between JSON or Javascript Object"/>
             </Head>
 
             <main className={styles.root}>
+                <div className={styles.cover} />
                 <section className={styles.container}>
                     <div className={styles.item}>
                         <textarea
@@ -90,19 +98,6 @@ const Home: NextPage = () => {
                 </section>
                 <section className={styles.container}>
                     <div className={styles.item}>
-                        {diffA && <React.Fragment>
-                            <textarea
-                                value={diffA}
-                                disabled
-                                rows={16}
-                            ></textarea>
-                            <Button
-                                onClick={() => copy(diffA)}
-                                color={'primary'}
-                                variant={'contained'}>Copy</Button>
-                        </React.Fragment>}
-                    </div>
-                    <div className={styles.item}>
                         {diffB && <React.Fragment>
                             <textarea
                                 value={diffB}
@@ -111,6 +106,19 @@ const Home: NextPage = () => {
                             ></textarea>
                             <Button
                                 onClick={() => copy(diffB)}
+                                color={'primary'}
+                                variant={'contained'}>Copy</Button>
+                        </React.Fragment>}
+                    </div>
+                    <div className={styles.item}>
+                        {diffA && <React.Fragment>
+                            <textarea
+                                value={diffA}
+                                disabled
+                                rows={16}
+                            ></textarea>
+                            <Button
+                                onClick={() => copy(diffA)}
                                 color={'primary'}
                                 variant={'contained'}>Copy</Button>
                         </React.Fragment>}
