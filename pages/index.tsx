@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.scss'
 import {useState} from "react";
 import {Button} from "../src/Button/Button";
 import React from 'react';
+import {event} from "./_app";
 
 const Home: NextPage = () => {
 
@@ -28,7 +29,6 @@ const Home: NextPage = () => {
                 delete a[key]
             }
         }
-        console.log('diff', `${a}`);
         return stringObject(a);
     }
 
@@ -49,11 +49,24 @@ const Home: NextPage = () => {
         if (typeof a === 'object' && typeof b === 'object') {
             setDiffA(getDifference(a, b));
             setDiffB(getDifference(b, a));
+            try {
+                event('Compare Event', {
+                    length_a: Object.keys(a).length,
+                    length_b: Object.keys(b).length,
+                });
+            } catch (e) {
+            }
         }
     }
 
-    const copy = (data: string) => {
+    const copy = (data: string, side: string) => {
         navigator.clipboard.writeText(data);
+        try {
+            event('Copy Content', {
+                side
+            });
+        } catch (e) {
+        }
     };
 
 
@@ -103,7 +116,7 @@ const Home: NextPage = () => {
                                 rows={16}
                             ></textarea>
                             <Button
-                                onClick={() => copy(diffB)}
+                                onClick={() => copy(diffB, 'left')}
                                 color={'primary'}
                                 variant={'contained'}>Copy</Button>
                         </React.Fragment>}
@@ -116,7 +129,7 @@ const Home: NextPage = () => {
                                 rows={16}
                             ></textarea>
                             <Button
-                                onClick={() => copy(diffA)}
+                                onClick={() => copy(diffA, 'right')}
                                 color={'primary'}
                                 variant={'contained'}>Copy</Button>
                         </React.Fragment>}
@@ -126,7 +139,8 @@ const Home: NextPage = () => {
 
             <footer className={styles.footer}>
                 <section className={styles.container}>
-                    <p> Code with ❤️ by <a target={'_blank'} href="https://www.linkedin.com/in/bruce-guenkam" rel="noreferrer">Bruce Guenkam</a>.</p>
+                    <p> Code with ❤️ by <a target={'_blank'} href="https://www.linkedin.com/in/bruce-guenkam"
+                                           rel="noreferrer">Bruce Guenkam</a>.</p>
                     <div style={{flexGrow: 1}}/>
                     <a href="https://www.buymeacoffee.com/bruceguenkam" target={'_blank'} rel="noreferrer">
                         <img src="/yellow-button.png" alt=""/>
