@@ -20,8 +20,6 @@ const Home: NextPage = () => {
         .replaceAll(',', ',\n');
 
 
-
-
     const getDifference = (x: Object, y: Object) => {
         const a = JSON.parse(JSON.stringify(x));
         const b = JSON.parse(JSON.stringify(y));
@@ -75,7 +73,7 @@ const Home: NextPage = () => {
             </Head>
 
             <main className={styles.root}>
-                <div className={styles.cover} />
+                <div className={styles.cover}/>
                 <section className={styles.container}>
                     <div className={styles.item}>
                         <textarea
@@ -128,13 +126,13 @@ const Home: NextPage = () => {
 
             <footer className={styles.footer}>
                 <section className={styles.container}>
-                    <p>Created by <a target={'_blank'} href="https://www.linkedin.com/in/bruce-guenkam">Bruce Guenkam</a>.</p>
-                    <div style={{ flexGrow: 1 }}/>
-                    <a href="https://www.buymeacoffee.com/bruceguenkam" target={'_blank'}>
+                    <p> Code with ❤️ by <a target={'_blank'} href="https://www.linkedin.com/in/bruce-guenkam" rel="noreferrer">Bruce Guenkam</a>.</p>
+                    <div style={{flexGrow: 1}}/>
+                    <a href="https://www.buymeacoffee.com/bruceguenkam" target={'_blank'} rel="noreferrer">
                         <img src="/yellow-button.png" alt=""/>
                     </a>
-                    <div style={{ flexGrow: 1 }}/>
-                    <a href="https://github.com/sand97/json-locale-diff" target={'_blank'}>Source</a>
+                    <div style={{flexGrow: 1}}/>
+                    <a href="https://github.com/sand97/json-locale-diff" target={'_blank'} rel="noreferrer">Source</a>
                 </section>
             </footer>
         </div>
