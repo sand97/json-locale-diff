@@ -38,7 +38,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
   return <React.Fragment>
-    {(typeof window != 'undefined' && !(window as any).mixpanel && <Script
+    {(typeof window != 'undefined' && !(window as any).mixpanel &&
+        <Script
+            id={'mix-panel-script'}
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
