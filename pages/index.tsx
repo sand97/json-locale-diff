@@ -14,10 +14,10 @@ const Home: NextPage = () => {
     const [diffA, setDiffA] = useState('');
     const [diffB, setDiffB] = useState('');
 
-    const stringObject = (x: Object) => `${(Object.keys(x).length > 0 ?
-        `${JSON.stringify(x)}` : '')}<end>`
-        .replace('{', '')
-        .replace('}<end>', '')
+    const stringObject = (x: Object) => (Object.keys(x).length > 0 ?
+        `${JSON.stringify(x)}` : '')
+        // .replaceAll('{', '')
+        // .replaceAll('}', '')
         .replaceAll(',', ',\n');
 
 
