@@ -14,10 +14,10 @@ const Home: NextPage = () => {
     const [diffA, setDiffA] = useState('');
     const [diffB, setDiffB] = useState('');
 
-    const stringObject = (x: Object) => (Object.keys(x).length > 0 ?
-        `${JSON.stringify(x)}` : '')
-        // .replaceAll('{', '')
-        // .replaceAll('}', '')
+    const stringObject = (x: Object) => `${(Object.keys(x).length > 0 ?
+        `${JSON.stringify(x)}` : '')}<no-abcent-props>`
+        .replace('{', '')
+        .replace('}<no-abcent-props>', '')
         .replaceAll(',', ',\n');
 
 
